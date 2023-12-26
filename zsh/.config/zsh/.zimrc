@@ -1,0 +1,23 @@
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-history-substring-search
+
+zmodule input
+zmodule environment
+
+zmodule utility
+zmodule archive
+zmodule exa
+zmodule fzf
+zmodule git
+zmodule pacman
+
+zmodule jeffreytse/zsh-vi-mode
+zmodule kiesman99/zim-zoxide
+zmodule fdellwing/zsh-bat
+zmodule ael-code/zsh-colored-man-pages
+zmodule MichaelAquilina/zsh-you-should-use
+zmodule joke/zim-starship
+

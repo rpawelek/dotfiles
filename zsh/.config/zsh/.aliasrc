@@ -1,0 +1,6 @@
+alias vi="nvim"
+alias nv="nvim"
+alias cat="bat"
+alias grep="ripgrep"
+alias find="fd"
+
