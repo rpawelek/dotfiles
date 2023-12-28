@@ -1,5 +1,6 @@
 #!/bin/sh
 source "$HOME/.config/zsh/zsh-exports"
+source "$HOME/.config/zsh/zsh-supercharge"
 
 eval "$(starship init zsh)"
 
