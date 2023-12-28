@@ -1,4 +1,5 @@
 #!/bin/sh
+source "$HOME/.config/zsh/zsh-exports"
 
 eval "$(starship init zsh)"
 
