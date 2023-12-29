@@ -1,4 +1,8 @@
 #!/bin/sh
+alias grep="rg"
+alias find="fd"
+alias cat="bat"
+
 alias nv="nvim"
 alias vi="nvim"
 
