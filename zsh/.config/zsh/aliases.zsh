@@ -1,5 +1,4 @@
 #!/bin/sh
-alias grep="rg"
 alias find="fd"
 alias cat="bat"
 
