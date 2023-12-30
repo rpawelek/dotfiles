@@ -16,6 +16,7 @@ alias paci="sudo pacman -Syu"
 alias pacu="sudo pacman -Syyu"
 alias pacs="sudo pacman -Ss"
 
+alias g="git"
 alias gs="git status"
 alias gc="git commit -m"
 alias gca="git commit -am"
