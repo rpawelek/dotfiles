@@ -12,7 +12,7 @@ alias rm="rm -i"
 alias df="df -h"
 alias free="free -m"
 
-alias paci="sudo pacman -Syu"
+alias paci="sudo pacman -Sy"
 alias pacu="sudo pacman -Syyu"
 alias pacs="sudo pacman -Ss"
 

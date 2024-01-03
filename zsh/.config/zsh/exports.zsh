@@ -30,4 +30,5 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export _Z_DATA="$XDG_DATA_HOME/z"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
 
