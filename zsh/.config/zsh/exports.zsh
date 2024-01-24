@@ -22,6 +22,7 @@ export MANPAGER="less"
 
 export PATH="$XDG_BIN_HOME:$PATH"
 export PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
+export PATH="$XDG_DATA_HOME/aftman/bin:$PATH"
 
 # Remove clutter from home directory
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
