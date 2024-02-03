@@ -36,4 +36,5 @@ export NVM_DIR="$XDG_DATA_HOME/nvm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export AFTMAN_ROOT="$XDG_DATA_HOME/aftman"
+export GDBHISTFILE="$XDG_DATA_HOME/gdb/history"
 
