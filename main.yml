@@ -1,0 +1,8 @@
+---
+
+- name: Bootstrap local environment
+  hosts: all
+  tasks:
+    - name: Setup system
+      import_tasks: tasks/system.yml
+

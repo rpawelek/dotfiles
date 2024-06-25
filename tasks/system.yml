@@ -1,6 +1,6 @@
 ---
 
-- name: Update system
+- name: Update system packages
   ansible.builtin.dnf:
     name: "*"
     state: latest
