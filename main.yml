@@ -6,3 +6,6 @@
     - name: Setup system
       import_tasks: tasks/system.yml
 
+    - name: Configure GNOME
+      import_tasks: tasks/gnome.yml
+

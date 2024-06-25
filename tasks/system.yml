@@ -15,6 +15,7 @@
 - name: Enable Fedora Copr for libfprint-tod-goodix
   community.general.copr:
     name: antiderivative/libfprint-tod-goodix-0.0.9
+  become: yes
 
 - name: Install libfprint-tod-goodix and fprintd
   ansible.builtin.dnf:
