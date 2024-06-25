@@ -37,10 +37,10 @@
 
 - name: Remove old trash files
   dconf:
-    key: "/org/gnome/desktop/privacy/remove-old-thrash-files"
+    key: "/org/gnome/desktop/privacy/remove-old-trash-files"
     value: "true"
 
-- name: Delete old temporary & thrash files after 30 days
+- name: Delete old temporary & trash files after 30 days
   dconf:
     key: "/org/gnome/desktop/privacy/old-files-age"
     value: "30"

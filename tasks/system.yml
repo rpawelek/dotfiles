@@ -1,25 +1,34 @@
 ---
 
 - name: Update system packages
-  ansible.builtin.dnf:
+  dnf:
     name: "*"
     state: latest
   become: yes
   
 - name: Remove old libfprint
-  ansible.builtin.dnf:
-    name: libfprint
+  dnf:
+    name: "libfprint"
     state: absent
   become: yes
 
 - name: Enable Fedora Copr for libfprint-tod-goodix
   community.general.copr:
-    name: antiderivative/libfprint-tod-goodix-0.0.9
+    name: "antiderivative/libfprint-tod-goodix-0.0.9"
   become: yes
 
 - name: Install libfprint-tod-goodix and fprintd
-  ansible.builtin.dnf:
+  dnf:
     name: ["libfprint-tod-goodix", "fprintd"]
     state: present
+  become: yes
+
+- name: Disable unneeded repositories
+  community.general.dnf_config_manager:
+    name: 
+      - "copr:copr.fedorainfracloud.org:phracek:PyCharm"
+      - "google-chrome"
+      - "rpmfusion-nonfree-nvidia-driver"
+    state: disabled
   become: yes
 
