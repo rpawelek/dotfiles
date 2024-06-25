@@ -6,4 +6,19 @@
     state: latest
   become: yes
   
-- 
+- name: Remove old libfprint
+  ansible.builtin.dnf:
+    name: libfprint
+    state: absent
+  become: yes
+
+- name: Enable Fedora Copr for libfprint-tod-goodix
+  community.general.copr:
+    name: antiderivative/libfprint-tod-goodix-0.0.9
+
+- name: Install libfprint-tod-goodix and fprintd
+  ansible.builtin.dnf:
+    name: ["libfprint-tod-goodix", "fprintd"]
+    state: present
+  become: yes
+
