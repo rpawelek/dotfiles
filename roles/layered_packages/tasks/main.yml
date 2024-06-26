@@ -1,11 +1,11 @@
 ---
 
-- name: Check to see if an rpm-ostree transaction is currently running
+- name: Check to see if rpm-ostree transaction is currently running
   ansible.builtin.command: pgrep rpm-ostree
   register: ostree_status
   failed_when: ostree_status.rc == "999"
 
-- name: Cancel a current rpm-ostree update when update is currently running
+- name: Cancel current rpm-ostree update when update is currently running
   ansible.builtin.command: rpm-ostree cancel
   when: ostree_status.rc != 1
 
