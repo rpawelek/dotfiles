@@ -21,6 +21,18 @@ flatpak_remote_install:
 
 flatpak_package_install:
   - { remote: 'flathub', package: 'org.mozilla.firefox' }
+  - { remote: 'flathub', package: 'com.mattjakeman.ExtensionManager' }
+  - { remote: 'flathub', package: 'org.gnome.Firmware' }
+  - { remote: 'flathub', package: 'io.bassi.Amberol' }
+  - { remote: 'flathub', package: 'org.gnome.Boxes' }
+  - { remote: 'flathub', package: 'app.devsuite.Ptyxis' }
+  - { remote: 'flathub', package: 'com.github.marhkb.Pods' }
+  - { remote: 'flathub', package: 'org.signal.Signal' }
+  - { remote: 'flathub', package: 'com.quexten.Goldwarden' }
+  - { remote: 'flathub', package: 'com.github.rafostar.Clapper' }
+  - { remote: 'fedora', package: 'org.gnome.World.Secrets' }
+  - { remote: 'fedora', package: 'ca.desrt.dconf-editor' }
+  - { remote: 'fedora', package: 'com.github.tchx84.Flatseal' }
 
 
 # 'gnome_settings' role
