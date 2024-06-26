@@ -18,6 +18,9 @@ flatpak_remote_install:
   - { name: 'flathub', url: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }
   - { name: 'fedora', url: 'oci+https://registry.fedoraproject.org' }
 
+flatpak_package_install:
+  - { remote: 'flathub', package: 'org.mozilla.firefox' }
+
 
 # 'settings' role
 
