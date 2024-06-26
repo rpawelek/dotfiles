@@ -6,6 +6,7 @@ layered_package_install:
   - tmux
   - htop
   - net-tools
+  - python3-psutil
 
 base_package_remove:
   - firefox firefox-langpacks
