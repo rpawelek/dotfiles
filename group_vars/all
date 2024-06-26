@@ -1,0 +1,42 @@
+# 'layered_packages' role
+
+layered_package_install:
+  - zsh
+  - neovim
+  - tmux
+  - htop
+  - net-tools
+
+base_package_remove:
+  - firefox
+  - firefox-lang-packs
+
+
+# 'flatpak' role
+
+flatpak_remote_install:
+  - { name: 'flathub', url: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }
+  - { name: 'fedora', url: 'oci+https://registry.fedoraproject.org' }
+
+
+# 'settings' role
+
+dconf_settings:
+  - { key: '/org/gnome/desktop/interface/color-scheme', value: "'prefer-dark'" }
+  - { key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/remember-recent-files', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/remove-old-temp-files', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/remove-old-trash-files', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/recent-files-max-age', value: '30' }
+  - { key: '/org/gnome/desktop/privacy/old-files-age', value: '14' }
+  - { key: '/org/gnome/mutter/center-new-windows', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/recent-files-max-age', value: '30' }
+  - { key: '/org/gnome/mutter/center-new-windows', value: 'true' }
+  - { key: '/org/gnome/desktop/interface/font-antialiasing', value: "'rgba'" }
+
+
+# 'os_updates' role
+
+update_policy: stage
+idle_timeout: '600'
+
