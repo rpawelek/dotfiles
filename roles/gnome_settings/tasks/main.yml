@@ -1,5 +1,10 @@
 ---
 
+- name: Copy backgrounds to host
+  ansible.builtin.copy:
+    src: files/backgrounds/
+    dest: "{{ ansible_user_dir }}/.local/share/backgrounds/"
+
 - name: Apply desired GNOME settings via dconf
   community.general.dconf:
     key: "{{ item.key }}"
@@ -7,7 +12,7 @@
     state: present
   loop: "{{ dconf_settings }}"
 
-- name: Update the dconf database
+- name: Update dconf database
   ansible.builtin.command: sudo dconf update
   become: yes
   become_method: sudo
