@@ -1,14 +1,5 @@
 ---
 
-- name: Bootstrap local environment
+- name: Setup workstation
   hosts: all
-  tasks:
-    - name: Setup system
-      import_tasks: tasks/system.yml
-
-    - name: Setup desktop environment
-      import_tasks: tasks/desktop.yml
-
-    - name: Configure GNOME
-      import_tasks: tasks/gnome.yml
 
