@@ -1,0 +1,19 @@
+---
+
+- name: Enable Copr for better fonts
+  community.general.copr:
+    name: "hyperreal/better_fonts"
+  become: yes
+
+- name: Install font replacements
+  dnf:
+    name: "fontconfig-font-replacements"
+  become: yes
+
+- name: Install desktop applications' flatpaks
+  community.general.flatpak:
+    name:
+      - "ca.desrt.dconf-editor"
+      - "com.bitwarden.desktop"
+      - "com.belmoussaoui.Obfuscate"
+

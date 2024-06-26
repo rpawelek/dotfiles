@@ -84,3 +84,8 @@
     key: "/org/gnome/shell/enabled-extensions"
     value: "['background-logo@fedorahosted.org', 'blur-my-shell@aunetx', 'caffeine@patapon.info']"
 
+- name: Enable subpixel antialiasing
+  dconf:
+    key: "/org/gnome/desktop/interface/font-antialiasing"
+    value: "'rgba'"
+
