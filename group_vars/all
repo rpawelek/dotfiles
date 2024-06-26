@@ -10,7 +10,7 @@ layered_package_install:
 
 base_package_remove:
   - firefox firefox-langpacks
-  - gnome-classic-session gnome-classic-session-xsession
+  - gnome-classic-session gnome-classic-session-xsession gnome-tour
 
 
 # 'flatpak' role
