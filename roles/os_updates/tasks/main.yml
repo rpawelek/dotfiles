@@ -31,3 +31,19 @@
     - flatpak-automatic.timer
     - rpm-ostreed-automatic.timer
 
+- name: Enable experimental bluetooth settings
+  ansible.builtin.replace:
+    path: /etc/bluetooth/main.conf
+    regexp: '#Experimental = false'
+    replace: 'Experimental = true'
+  become: yes
+  become_method: sudo
+
+- name: Restart bluetooth service
+  ansible.builtin.systemd_service:
+    name: bluetooth
+    state: restarted
+    daemon_reload: true
+  become: yes
+  become_method: sudo
+
