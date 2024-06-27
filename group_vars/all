@@ -10,7 +10,8 @@ layered_package_install:
 
 base_package_remove:
   - firefox firefox-langpacks
-  - gnome-classic-session gnome-classic-session-xsession gnome-tour
+  - gnome-classic-session gnome-classic-session-xsession
+  - gnome-tour
 
 
 # 'flatpak' role
@@ -50,6 +51,7 @@ dconf_settings:
   - { key: '/org/gnome/desktop/privacy/recent-files-max-age', value: '30' }
   - { key: '/org/gnome/mutter/center-new-windows', value: 'true' }
   - { key: '/org/gnome/desktop/interface/font-antialiasing', value: "'rgba'" }
+  - { key: '/org/gnome/desktop/search-providers/enabled', value: "['org.gnome.Calculator.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop' ]" }
 
 
 # 'os_updates' role
