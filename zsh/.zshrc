@@ -1,5 +1,5 @@
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
+export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -61,4 +61,3 @@ alias ls='ls --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
-
