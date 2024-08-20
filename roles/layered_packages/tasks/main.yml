@@ -1,0 +1,31 @@
+---
+
+- name: Check to see if rpm-ostree transaction is currently running
+  ansible.builtin.command: pgrep rpm-ostree
+  register: ostree_status
+  failed_when: ostree_status.rc == "999"
+
+- name: Cancel current rpm-ostree update when update is currently running
+  ansible.builtin.command: rpm-ostree cancel
+  when: ostree_status.rc != 1
+
+- name: Install desired applications as layered packages
+  community.general.rpm_ostree_pkg:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  become_method: sudo
+  loop: "{{ layered_package_install }}"
+
+- name: Remove applications from the base OS
+  ansible.builtin.command: rpm-ostree override remove {{ item }}
+  become: yes
+  become_method: sudo
+  loop: "{{ base_package_remove }}"
+  register: override_status
+  changed_when: override_status.rc == "0"
+  failed_when: override_status.rc == "999"
+
+- debug:
+    msg: "A reboot is required to complete installation / removal of these packages"
+

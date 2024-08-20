@@ -1,0 +1,63 @@
+# 'layered_packages' role
+
+layered_package_install:
+  - zsh
+  - neovim
+  - tmux
+  - htop
+  - net-tools
+  - python3-psutil
+  - fzf
+  - ripgrep
+
+base_package_remove:
+  - firefox firefox-langpacks
+  - gnome-classic-session gnome-classic-session-xsession
+  - gnome-tour
+
+
+# 'flatpak' role
+
+flatpak_remote_install:
+  - { name: 'flathub', url: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }
+  - { name: 'fedora', url: 'oci+https://registry.fedoraproject.org' }
+
+flatpak_package_install:
+  - { remote: 'flathub', package: 'org.mozilla.firefox' }
+  - { remote: 'flathub', package: 'com.mattjakeman.ExtensionManager' }
+  - { remote: 'flathub', package: 'org.gnome.Firmware' }
+  - { remote: 'flathub', package: 'io.bassi.Amberol' }
+  - { remote: 'flathub', package: 'org.gnome.Boxes' }
+  - { remote: 'flathub', package: 'app.devsuite.Ptyxis' }
+  - { remote: 'flathub', package: 'com.github.marhkb.Pods' }
+  - { remote: 'flathub', package: 'org.signal.Signal' }
+  - { remote: 'flathub', package: 'com.bitwarden.desktop' }
+  - { remote: 'flathub', package: 'com.github.rafostar.Clapper' }
+  - { remote: 'fedora', package: 'ca.desrt.dconf-editor' }
+  - { remote: 'fedora', package: 'com.github.tchx84.Flatseal' }
+
+
+# 'gnome_settings' role
+
+dconf_settings:
+  - { key: '/org/gnome/desktop/background/picture-uri', value: "'file://{{ ansible_user_dir }}/.local/share/backgrounds/abstract.png'"}
+  - { key: '/org/gnome/desktop/background/picture-uri-dark', value: "'file://{{ ansible_user_dir }}/.local/share/backgrounds/abstract.png'"}
+  - { key: '/org/gnome/desktop/interface/color-scheme', value: "'prefer-dark'" }
+  - { key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/remember-recent-files', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/remove-old-temp-files', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/remove-old-trash-files', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/recent-files-max-age', value: '30' }
+  - { key: '/org/gnome/desktop/privacy/old-files-age', value: '14' }
+  - { key: '/org/gnome/mutter/center-new-windows', value: 'true' }
+  - { key: '/org/gnome/desktop/privacy/recent-files-max-age', value: '30' }
+  - { key: '/org/gnome/mutter/center-new-windows', value: 'true' }
+  - { key: '/org/gnome/desktop/interface/font-antialiasing', value: "'rgba'" }
+  - { key: '/org/gnome/desktop/search-providers/enabled', value: "['org.gnome.Calculator.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop' ]" }
+
+
+# 'os_updates' role
+
+update_policy: stage
+idle_timeout: '600'
+
