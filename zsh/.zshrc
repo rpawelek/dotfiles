@@ -59,6 +59,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias gpgfix='gpgconf --kill all && gpg --card-status && gpg-agent'
+alias nv='nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
