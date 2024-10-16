@@ -63,3 +63,4 @@ alias nv='nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+eval "$(direnv hook zsh)"
