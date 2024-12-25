@@ -15,3 +15,21 @@ zinit wait lucid light-mode depth"1" for \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# History
+HISTSIZE=5000
+HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
