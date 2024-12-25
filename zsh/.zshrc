@@ -26,6 +26,9 @@ bindkey -e
 bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
 
+# Prompt
+eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME:-${HOME}/.config}/ohmyposh/main.toml)"
+
 # History
 HISTSIZE=5000
 HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
