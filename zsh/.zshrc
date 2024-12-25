@@ -61,7 +61,9 @@ alias ff="find . type f -name"
 alias p="ps -f"
 alias g="git"
 
-# Path
+# Environment & Path
+export SHELL="/bin/zsh" # Set using Ptyxis' profile
+
 . "$HOME/.cargo/env"
 
 export GOPATH="$HOME/go"
