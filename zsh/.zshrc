@@ -58,6 +58,13 @@ alias ff="find . type f -name"
 alias p="ps -f"
 alias g="git"
 
+# Path
+. "$HOME/.cargo/env"
+
+export GOPATH="$HOME/go"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$GOPATH/bin:$HOME/.mix/escripts:$BUN_INSTALL/bin:$PATH"
+
 # Shell integrations
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
